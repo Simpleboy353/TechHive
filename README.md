@@ -1,7 +1,7 @@
 # TechHive
 #### An android app made using Xamarin.Forms and SQLite
 
-### The app has 3 interfaces, each meaant for a specific user
+### The app has 3 interfaces, each meant for a specific user
 #### User, Seller and Admin
 #### Each of these can be accessed by creating accounts for the roles you want except admins where, the credentials are fixed
 #### User:  The regular shopper can browse products, place orders etc
