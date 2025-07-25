@@ -1,7 +1,7 @@
 # TechHive
 #### An android app made using Xamarin.Forms and SQLite
 
-#### Note: This app is just a prototype
+#### Note: This app is just a prototype/template
 
 ### The app has 3 interfaces, each meant for a specific user
 #### User, Seller and Admin
