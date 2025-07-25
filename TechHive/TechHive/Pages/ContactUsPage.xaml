@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechHive.Pages.ContactUsPage"
+             Title="Contact Us"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="We’d love to hear from you!" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center"
+                   TextColor="#333"/>
+
+            <Label Text="Name" FontSize="14" TextColor="Black"/>
+            <Entry x:Name="NameEntry" Placeholder="Your name"/>
+
+            <Label Text="Email" FontSize="14" TextColor="Black"/>
+            <Entry x:Name="EmailEntry" Placeholder="Your email" Keyboard="Email"/>
+
+            <Label Text="Message" FontSize="14" TextColor="Black"/>
+            <Editor x:Name="MessageEditor" Placeholder="Write your message here..." HeightRequest="120"/>
+
+            <Button Text="Send Message"
+                    BackgroundColor="#03DAC5"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Clicked="OnSendClicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

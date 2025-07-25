@@ -1,0 +1,66 @@
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Pages.SignUpPage"
+             Title="Sign Up"
+             BackgroundColor="#f5f5f5">
+
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="20">
+
+            <Image Source="techhive_logo_transparent.png"
+                   HeightRequest="100"
+                   HorizontalOptions="Center"
+                   Margin="0,-30,0,10"/>
+
+            <Label Text="Create Your Account"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
+
+            <Frame BackgroundColor="White" CornerRadius="12" Padding="20" HasShadow="True">
+                <StackLayout Spacing="15">
+
+                    <Label Text="First Name" FontSize="14" />
+                    <Entry x:Name="firstNameEntry" Placeholder="Enter your first name" />
+
+                    <Label Text="Last Name" FontSize="14" />
+                    <Entry x:Name="lastNameEntry" Placeholder="Enter your last name" />
+
+                    <Label Text="Email" FontSize="14" />
+                    <Entry x:Name="emailEntry" Placeholder="Enter your email" Keyboard="Email" />
+
+                    <Label Text="Password" FontSize="14" />
+                    <Entry x:Name="passwordEntry" Placeholder="Enter password" IsPassword="True" />
+
+                    <Label Text="Confirm Password" FontSize="14" />
+                    <Entry x:Name="confirmPasswordEntry" Placeholder="Re-enter password" IsPassword="True" />
+
+                    <Button Text="Sign Up"
+                            BackgroundColor="#007AFF"
+                            TextColor="White"
+                            Clicked="OnUserSignUpClicked" />
+
+                </StackLayout>
+            </Frame>
+
+            <!-- Link to Seller Sign Up -->
+            <Label HorizontalOptions="Center" FontSize="13">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Want to sell products? " />
+                        <Span Text="Sign up as Seller"
+                              TextColor="DarkGreen"
+                              FontAttributes="Bold">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnSellerSignUpTapped" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </StackLayout>
+    </ScrollView>
+</base:BaseContentPage>

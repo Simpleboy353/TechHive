@@ -1,0 +1,40 @@
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Admin.ManageUsersPage"
+             Title="Manage Users"
+             BackgroundColor="#f9f9f9">
+
+    <StackLayout Padding="15" Spacing="20">
+        <Label Text="Available Users"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <CollectionView x:Name="usersCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="15" Margin="5" CornerRadius="10" BackgroundColor="White" HasShadow="True">
+                        <StackLayout Spacing="5">
+                            <Label Text="{Binding DisplayName}" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="{Binding Email}" FontSize="13" TextColor="#666"/>
+
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Button Text="Edit"
+                                        Clicked="OnEditClicked"
+                                        CommandParameter="{Binding}"
+                                        BackgroundColor="#457b9d"
+                                        TextColor="White" />
+                                <Button Text="Delete"
+                                        Clicked="OnDeleteClicked"
+                                        CommandParameter="{Binding}"
+                                        BackgroundColor="#e63946"
+                                        TextColor="White" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</base:BaseContentPage>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:base="clr-namespace:TechHive.Base"
+                      x:Class="TechHive.Seller.SellerDashboardPage"
+                      Title="Seller Dashboard"
+                      BackgroundColor="#f9f9f9">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Image Source="techhive_logo_transparent.png"
+                   HeightRequest="100"
+                   HorizontalOptions="Center"
+                   Margin="0,-20,0,10"/>
+
+            <Label Text="Welcome, Seller"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Frame CornerRadius="10" BackgroundColor="White" Padding="15" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Your Products" FontSize="18" />
+                    <Label x:Name="productCountLabel" FontSize="22" FontAttributes="Bold" TextColor="#2a9d8f"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="10" BackgroundColor="White" Padding="15" HasShadow="True">
+                <StackLayout>
+                    <Label Text="Your Orders" FontSize="18" />
+                    <Label x:Name="orderCountLabel" FontSize="22" FontAttributes="Bold" TextColor="#2a9d8f"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Action Buttons -->
+            <Button Text="Manage Products"
+                    BackgroundColor="#264653"
+                    TextColor="White"
+                    Clicked="OnManageProductsClicked"/>
+
+            <Button Text="View Orders"
+                    BackgroundColor="#2a9d8f"
+                    TextColor="White"
+                    Clicked="OnViewOrdersClicked"/>
+
+        </StackLayout>
+    </ScrollView>
+</base:BaseContentPage>

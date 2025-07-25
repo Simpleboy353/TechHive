@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:pages="clr-namespace:TechHive.Pages"
+            xmlns:admin="clr-namespace:TechHive.Admin"
+            xmlns:seller="clr-namespace:TechHive.Seller"
+            x:Class="TechHive.Sidebars.AdminSidebarPage">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Admin Menu">
+            <StackLayout Padding="20" Spacing="15">
+                <Label Text="Welcome, Admin" FontSize="18" FontAttributes="Bold" />
+                <Button Text="Dashboard" Clicked="OnDashboardClicked" />
+                <Button Text="Manage Products" Clicked="OnManageProductsClicked" />
+                <Button Text="View Orders" Clicked="OnViewOrdersClicked" />
+                <Button Text="View Messages" Clicked="OnViewMessagesClicked" />
+                <Button Text="Sign Out" Clicked="OnLogoutClicked" />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <admin:AdminDashboardPage />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

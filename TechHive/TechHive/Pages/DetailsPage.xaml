@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Pages.DetailsPage"
+             Title="Product Details"
+             BackgroundColor="#f9f9f9">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- Product Image -->
+            <Frame Padding="0" CornerRadius="10" HasShadow="True">
+                <Image x:Name="productImage"
+                       HeightRequest="250"
+                       Aspect="AspectFill" />
+            </Frame>
+
+            <!-- Product Name -->
+            <Label x:Name="nameLabel"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#222" />
+
+            <!-- Product Price -->
+            <Label x:Name="priceLabel"
+                   FontSize="20"
+                   TextColor="#2a9d8f" />
+
+            <!-- Product Description -->
+            <Label Text="Description"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#444" />
+
+            <Label x:Name="descLabel"
+                   FontSize="14"
+                   TextColor="#666" />
+
+            <!-- Add to Cart Button -->
+            <Button Text="Add to Cart"
+                    BackgroundColor="#2a9d8f"
+                    TextColor="White"
+                    Clicked="OnAddToCartClicked" />
+
+        </StackLayout>
+    </ScrollView>
+</base:BaseContentPage>

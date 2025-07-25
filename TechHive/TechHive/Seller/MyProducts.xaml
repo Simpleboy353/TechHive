@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Seller.MyProductsPage"
+             Title="My Products"
+             BackgroundColor="#f5f5f5">
+
+    <StackLayout Padding="15" Spacing="10">
+
+        <Label Text="My Products"
+               FontSize="24"
+               FontAttributes="Bold"
+               TextColor="#222"
+               HorizontalOptions="Center" />
+
+        <CollectionView x:Name="productsCollectionView" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10" Padding="10" BackgroundColor="White" Margin="0,5">
+                        <StackLayout Spacing="10">
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image Source="{Binding ImagePath}" WidthRequest="80" HeightRequest="80" />
+                                <StackLayout VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" />
+                                    <Label Text="{Binding Category}" FontSize="14" TextColor="#666" />
+                                    <Label Text="{Binding Price, StringFormat='${0:F2}'}" FontSize="16" TextColor="Green" />
+                                </StackLayout>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="15">
+                                <Button Text="Edit"
+                                        BackgroundColor="#2196F3"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        Clicked="OnEditClicked"
+                                        CommandParameter="{Binding .}" />
+                                <Button Text="Delete"
+                                        BackgroundColor="Red"
+                                        TextColor="White"
+                                        CornerRadius="5"
+                                        Clicked="OnDeleteClicked"
+                                        CommandParameter="{Binding .}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</base:BaseContentPage>

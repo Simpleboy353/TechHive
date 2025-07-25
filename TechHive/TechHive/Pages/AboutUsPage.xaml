@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Pages.AboutUsPage"
+             Title="About Us"
+             BackgroundColor="#f9f9f9">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Image Source="techhive_logo_transparent.png"
+                   HeightRequest="80"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,10"/>
+
+
+            <Label Text="About TechHive"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#222"
+                   HorizontalOptions="Center" />
+
+            <Frame CornerRadius="12" Padding="20" BackgroundColor="White" HasShadow="True">
+                <Label Text="TechHive is your destination for innovative, reliable, and affordable tech products. We’re passionate about simplifying technology and making it accessible for everyone. Whether you’re shopping for cutting-edge gadgets or daily tech essentials, we’ve got you covered."
+                       FontSize="16"
+                       TextColor="#555" />
+            </Frame>
+
+            <Label Text="Our Mission" FontSize="22" FontAttributes="Bold" TextColor="#333" />
+            <Label Text="To empower users by offering smart, high-quality technology solutions through a seamless shopping experience." TextColor="#555" />
+
+            <Label Text="Our Vision" FontSize="22" FontAttributes="Bold" TextColor="#333" />
+            <Label Text="To be a global leader in tech retail, recognized for trust, innovation, and user satisfaction." TextColor="#555" />
+
+            <!-- Button to Contact Us Page -->
+            <Button Text="Contact Us"
+                    BackgroundColor="#03DAC5"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnContactUsClicked" />
+        </StackLayout>
+    </ScrollView>
+</base:BaseContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Admin.ManageProductsPage"
+             Title="Manage Products"
+             BackgroundColor="#f9f9f9">
+
+    <StackLayout Padding="15" Spacing="25">
+        <Label Text="Available Products"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+        <CollectionView x:Name="productsCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" CornerRadius="10" BackgroundColor="White" HasShadow="True">
+                        <StackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="{Binding Category}" FontSize="13" TextColor="#666"/>
+                            <Label Text="{Binding Price, StringFormat='Price: ${0:F2}'}" FontSize="13" TextColor="#2a9d8f"/>
+                            <Button Text="Delete" Clicked="OnDeleteClicked" CommandParameter="{Binding}" BackgroundColor="#e63946" TextColor="White"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</base:BaseContentPage>

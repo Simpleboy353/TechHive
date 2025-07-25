@@ -1,0 +1,28 @@
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Admin.ViewAllOrdersPage"
+             Title="All Orders"
+             BackgroundColor="#f9f9f9">
+
+    <StackLayout Padding="15" Spacing="10">
+        <CollectionView x:Name="ordersCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" CornerRadius="10" BackgroundColor="White" HasShadow="True">
+                        <StackLayout>
+                            <Label Text="{Binding ProductIds, StringFormat='Product IDs: {0}'}" FontSize="14" FontAttributes="Bold"/>
+                            <Label Text="{Binding OrderDate, StringFormat='Date: {0}'}" FontSize="13" TextColor="#666"/>
+                            <Label Text="{Binding PaymentMethod, StringFormat='Payment: {0}'}" FontSize="13" TextColor="#666"/>
+                            <Label Text="{Binding Status, StringFormat='Status: {0}'}" FontSize="13" TextColor="#888"/>
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Button Text="Edit" Clicked="OnEditClicked" CommandParameter="{Binding}" BackgroundColor="#457b9d" TextColor="White" />
+                                <Button Text="Delete" Clicked="OnDeleteClicked" CommandParameter="{Binding}" BackgroundColor="#e63946" TextColor="White" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</base:BaseContentPage>

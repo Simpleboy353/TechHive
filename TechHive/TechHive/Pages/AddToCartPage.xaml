@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:base="clr-namespace:TechHive.Base"
+                      x:Class="TechHive.Pages.CartPage"
+                      Title="My Cart"
+                      BackgroundColor="White">
+
+    <StackLayout Padding="10">
+
+        <CollectionView x:Name="CartItemsCollectionView"
+                        ItemsLayout="VerticalList"
+                        Margin="0,0,0,10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="0,5">
+                        <Grid ColumnDefinitions="80,*,Auto"
+                              RowDefinitions="Auto,Auto">
+                            <Image Grid.RowSpan="2"
+                                   Source="{Binding Image}"
+                                   HeightRequest="60"
+                                   WidthRequest="60"
+                                   Aspect="AspectFill"
+                                   Margin="5" />
+
+                            <StackLayout Grid.Column="1" Spacing="2">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16"/>
+                                <Label Text="{Binding Price, StringFormat='Price: ${0:F2}'}" FontSize="14"/>
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Button Text="-" WidthRequest="30" Clicked="DecreaseQuantity_Clicked" CommandParameter="{Binding .}" />
+                                    <Label Text="{Binding Quantity}" VerticalOptions="Center"/>
+                                    <Button Text="+" WidthRequest="30" Clicked="IncreaseQuantity_Clicked" CommandParameter="{Binding .}" />
+                                </StackLayout>
+                            </StackLayout>
+
+                            <Button Grid.Row="1"
+                                    Grid.Column="2"
+                                    Text="Remove"
+                                    BackgroundColor="Red"
+                                    TextColor="White"
+                                    CornerRadius="5"
+                                    Padding="5"
+                                    FontSize="12"
+                                    Clicked="RemoveItem_Clicked"
+                                    CommandParameter="{Binding .}" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <StackLayout Margin="10,0" Spacing="5">
+            <Label x:Name="TotalPriceLabel" FontSize="18" FontAttributes="Bold" />
+            <Label x:Name="TaxLabel" FontSize="18" FontAttributes="Bold"/>
+            <Label x:Name="FinalPriceLabel" FontSize="18" FontAttributes="Bold" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="20" Margin="10">
+            <Button Text="Continue Shopping"
+                    Clicked="ContinueShopping_Clicked"
+                    BackgroundColor="#03A9F4"
+                    TextColor="White"
+                    CornerRadius="5" />
+            <Button Text="Proceed to Payment"
+                    Clicked="ProceedToPayment_Clicked"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    CornerRadius="5" />
+        </StackLayout>
+
+    </StackLayout>
+</base:BaseContentPage>

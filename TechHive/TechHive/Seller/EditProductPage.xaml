@@ -1,0 +1,59 @@
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Seller.EditProductPage"
+             Title="Edit Product"
+             BackgroundColor="#f9f9f9">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Edit Product" 
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#222" />
+
+            <Entry x:Name="nameEntry"
+                   Placeholder="Product Name"
+                   BackgroundColor="White" />
+
+            <Picker x:Name="categoryPicker"
+                Title="Select Category"
+                BackgroundColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                    <x:String>Electronics</x:String>
+                    <x:String>Accessories</x:String>
+                    <x:String>Wearables</x:String>
+                    <x:String>Smart Home</x:String>
+                    <x:String>Other</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <Entry x:Name="priceEntry"
+                   Placeholder="Price"
+                   Keyboard="Numeric"
+                   BackgroundColor="White" />
+
+            <Editor x:Name="descEditor"
+                    Placeholder="Product Description"
+                    AutoSize="TextChanges"
+                    BackgroundColor="White"
+                    HeightRequest="100" />
+
+            <Image x:Name="productImage" HeightRequest="150" />
+
+            <Button Text="Change Image"
+                    BackgroundColor="#FF9800"
+                    TextColor="White"
+                    Clicked="OnChangeImageClicked" />
+
+            <Button Text="Update Product"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    Clicked="OnUpdateClicked" />
+        </StackLayout>
+    </ScrollView>
+</base:BaseContentPage>

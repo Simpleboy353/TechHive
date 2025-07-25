@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage
+	         xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Admin.ViewMessagesPage"
+             Title="User Messages"
+             BackgroundColor="White">
+
+    <StackLayout Padding="15">
+        <Label Text="Contact Messages from Users"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,0,0,10"
+               TextColor="#333"/>
+
+        <CollectionView x:Name="MessagesCollectionView"
+                        ItemsSource="{Binding}"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="0,5">
+                        <StackLayout>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
+                            <Label Text="{Binding Email}" FontSize="14" TextColor="Gray" />
+							<Label Text="{Binding Content}" FontSize="14" LineBreakMode="WordWrap" TextColor="Black"/>
+							<Label Text="{Binding CreatedAt, StringFormat='Sent: {0:MM/dd/yyyy hh:mm tt}'}" FontSize="12" TextColor="DarkGray"/>
+						</StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</base:BaseContentPage>

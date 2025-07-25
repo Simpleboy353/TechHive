@@ -1,0 +1,63 @@
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:base="clr-namespace:TechHive.Base"
+             x:Class="TechHive.Seller.AddProductPage"
+             Title="Add Product"
+             BackgroundColor="#f9f9f9">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="Add a New Product"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#222" />
+
+            <Entry x:Name="nameEntry"
+                   Placeholder="Product Name"
+                   BackgroundColor="White" />
+
+            <Picker x:Name="categoryPicker"
+                    Title="Select Category"
+                    BackgroundColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Electronics</x:String>
+                        <x:String>Accessories</x:String>
+                        <x:String>Wearables</x:String>
+                        <x:String>Smart Home</x:String>
+                        <x:String>Other</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Entry x:Name="priceEntry"
+                   Placeholder="Price"
+                   Keyboard="Numeric"
+                   BackgroundColor="White" />
+
+            <Editor x:Name="descEditor"
+                    Placeholder="Product Description"
+                    AutoSize="TextChanges"
+                    BackgroundColor="White"
+                    HeightRequest="100" />
+
+            <Image x:Name="productImage"
+                   HeightRequest="150"
+                   BackgroundColor="#ddd"
+                   Aspect="AspectFill" />
+
+            <Button Text="Select Image"
+                    BackgroundColor="#CCCCCC"
+                    TextColor="Black"
+                    Clicked="OnSelectImageClicked" />
+
+            <Button Text="Add Product"
+                    BackgroundColor="#03DAC5"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Clicked="OnAddProductClicked" />
+        </StackLayout>
+    </ScrollView>
+</base:BaseContentPage>

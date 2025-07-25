@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<base:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                      xmlns:base="clr-namespace:TechHive.Base"
+                      x:Class="TechHive.Pages.PaymentPage"
+                      Title="Payment"
+                      BackgroundColor="#f9f9f9">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+
+            <Label Text="Payment Details" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#222" />
+
+            <!-- Payment Form -->
+            <Frame CornerRadius="10" BackgroundColor="White" Padding="20" HasShadow="True">
+                <StackLayout Spacing="15">
+                    <Entry x:Name="cardNameEntry" Placeholder="Cardholder Name" />
+                    <Entry x:Name="cardNumberEntry" Placeholder="Card Number" Keyboard="Numeric" TextChanged="CardNumberEntry_TextChanged" />
+
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Picker x:Name="expiryMonthPicker" Title="Month" WidthRequest="120"/>
+                        <Picker x:Name="expiryYearPicker" Title="Year" WidthRequest="120"/>
+                    </StackLayout>
+
+                    <Entry x:Name="cvvEntry" Placeholder="CVV" IsPassword="True" Keyboard="Numeric" TextChanged="CvvEntry_TextChanged" />
+                    <Editor x:Name="billingAddressEditor" Placeholder="Billing Address" AutoSize="TextChanges"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Order Summary -->
+            <Label Text="Order Summary" FontAttributes="Bold" FontSize="18"/>
+
+            <CollectionView x:Name="cartListView"
+                            Margin="0"
+                            HeightRequest="300"
+                            ItemsLayout="VerticalList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="10"
+                               Margin="0,5"
+                               CornerRadius="8"
+                               BackgroundColor="White"
+                               HasShadow="True">
+                            <Grid ColumnDefinitions="*,Auto">
+                                <StackLayout Grid.Column="0" Spacing="2">
+                                    <Label Text="{Binding Name}"
+                                           FontAttributes="Bold"
+                                           FontSize="14" />
+                                    <Label Text="{Binding Quantity, StringFormat='Qty: {0}'}"
+                                           FontSize="13"
+                                           TextColor="Gray" />
+                                </StackLayout>
+                                <Label Grid.Column="1"
+                                       Text="{Binding Price, StringFormat='${0:F2}'}"
+                                       FontSize="14"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="End" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Total -->
+            <Label x:Name="totalLabel" 
+                   Text="Total: $0.00" 
+                   FontAttributes="Bold" 
+                   FontSize="18" 
+                   HorizontalOptions="End"/>
+
+            <!-- Pay Now Button -->
+            <Button Text="Pay Now" 
+                    BackgroundColor="#2a9d8f" 
+                    TextColor="White" 
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    Clicked="PayNow_Clicked"/>
+        </StackLayout>
+    </ScrollView>
+</base:BaseContentPage>
