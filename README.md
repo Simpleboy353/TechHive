@@ -4,7 +4,7 @@
 ### The app has 3 interfaces, each meaant for a specific user
 #### User, Seller and Admin
 #### Each of these can be accessed by creating accounts for the roles you want except admins where, the credentials are fixed
-#### User:  The regular shopper who can browse products, place orders etc
+#### User:  The regular shopper can browse products, place orders etc
 #### Seller: Sellers can add, remove, edit products and manage orders.
 #### Admin: Admins can manage the users, products and orders and have complete control over the app.
 
